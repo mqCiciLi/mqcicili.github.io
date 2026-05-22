@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cici Li — Marketing & Creative Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#EDE4D8;
+  --cream2:#DDD0C2;
+  --rose:#7A3828;
+  --rose-light:#B8735F;
+  --rose-pale:#DDBDAF;
+  --ink:#080503;
+  --ink2:#1A100C;
+  --muted:#4A3830;
+  --border:#A89888;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;font-weight:400;font-size:17px;}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 3rem;
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;letter-spacing:0.08em;color:var(--ink);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:0.72rem;font-weight:400;text-transform:uppercase;letter-spacing:2px;color:var(--ink2);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--rose);}
+
+/* HERO */
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:94vh;
+  border-bottom:1px solid var(--border);
+}
+.hero-left{
+  padding:5rem 4rem;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--border);
+}
+.hero-eyebrow{
+  font-size:0.68rem;font-weight:400;text-transform:uppercase;letter-spacing:3px;
+  color:var(--rose);margin-bottom:2rem;
+}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,5.5vw,6rem);
+  line-height:1.02;font-weight:300;
+  margin-bottom:2rem;
+  color:var(--ink);
+}
+.hero-name em{font-style:italic;color:var(--rose);}
+.hero-bio{
+  font-size:0.92rem;line-height:1.85;color:var(--ink2);
+  max-width:380px;margin-bottom:2.5rem;font-weight:400;
+}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--ink);color:var(--cream);
+  padding:12px 28px;font-family:'Jost',sans-serif;
+  font-size:0.72rem;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  border:1px solid var(--ink);
+  cursor:pointer;text-decoration:none;
+  transition:background 0.25s,color 0.25s;display:inline-block;
+}
+.btn-primary:hover{background:var(--rose);border-color:var(--rose);}
+.btn-outline{
+  background:transparent;color:var(--ink);
+  padding:12px 28px;font-family:'Jost',sans-serif;
+  font-size:0.72rem;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  border:1px solid var(--border);
+  cursor:pointer;text-decoration:none;
+  transition:border-color 0.25s,color 0.25s;display:inline-block;
+}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose);}
+
+/* HERO RIGHT — IG style, refined */
+.hero-right{
+  background:var(--cream2);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:3rem 2.5rem;gap:2rem;
+}
+.ig-profile{display:flex;align-items:center;gap:1.2rem;width:100%;max-width:320px;}
+.ig-avatar{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--rose-pale);
+  border:1px solid var(--rose-light);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:400;color:var(--rose);
+  flex-shrink:0;letter-spacing:0.05em;
+}
+.ig-stats{display:flex;flex-direction:column;gap:5px;}
+.ig-handle{font-weight:400;font-size:0.9rem;letter-spacing:0.02em;}
+.ig-nums{display:flex;gap:1.2rem;font-size:0.75rem;color:var(--muted);}
+.ig-nums strong{color:var(--ink);font-weight:400;}
+.ig-bio{font-size:0.73rem;color:var(--muted);letter-spacing:0.02em;}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;width:100%;max-width:320px;}
+.ig-cell{
+  aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.62rem;font-weight:400;letter-spacing:0.3px;
+  text-align:center;padding:10px;cursor:pointer;
+  transition:opacity 0.18s;line-height:1.4;
+  color:var(--ink2);
+}
+.ig-cell:hover{opacity:0.7;}
+.ig-cell span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.75rem;}
+
+/* SECTIONS */
+section{border-bottom:1px solid var(--border);}
+.section-header{
+  display:flex;align-items:baseline;gap:1.5rem;
+  padding:3rem 4rem 0;
+}
+.section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.68rem;font-weight:400;
+  color:var(--rose);letter-spacing:3px;text-transform:uppercase;
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem;font-weight:300;color:var(--ink);
+  letter-spacing:0.02em;
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;padding:2.5rem 4rem 4rem;gap:0;}
+.about-text{padding-right:4rem;border-right:1px solid var(--border);}
+.about-text p{font-size:0.96rem;line-height:1.9;color:var(--ink2);margin-bottom:1.1rem;font-weight:400;}
+.about-text p strong{font-weight:500;color:var(--ink);}
+.skills-box{padding-left:4rem;display:flex;flex-direction:column;gap:1.5rem;}
+.skills-box h3{font-size:0.65rem;font-weight:400;text-transform:uppercase;letter-spacing:2.5px;color:var(--rose);margin-bottom:0.6rem;}
+.tag-list{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  padding:5px 13px;
+  border:1px solid var(--border);
+  font-size:0.72rem;font-weight:300;color:var(--ink2);
+  letter-spacing:0.5px;
+}
+.tag.accent{border-color:var(--rose-light);color:var(--rose);background:var(--rose-pale);}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:2.5rem 4rem 4rem;gap:1px;background:var(--border);row-gap:0;}
+.proj-card{background:var(--cream);cursor:pointer;transition:background 0.2s;padding:0;display:block;text-decoration:none;color:inherit;}
+.proj-card:hover{background:var(--cream2);}
+.proj-img{
+  height:100px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+  border-bottom:1px solid var(--border);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.1rem;
+  color:var(--muted);letter-spacing:0.05em;
+}
+.proj-body{padding:1.4rem 1.6rem 1.8rem;}
+.proj-type{font-size:0.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--rose);margin-bottom:8px;font-weight:400;}
+.proj-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:10px;line-height:1.3;color:var(--ink);}.proj-name a:hover{text-decoration:underline !important;color:var(--rose) !important;}
+.proj-desc{font-size:0.88rem;color:var(--ink2);line-height:1.65;font-weight:400;}
+.proj-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:14px;}
+.proj-tag{font-size:0.62rem;padding:3px 9px;border:1px solid var(--border);color:var(--muted);letter-spacing:0.5px;}
+
+/* RESUME */
+.resume-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.resume-left{padding:2.5rem 4rem 4rem;border-right:1px solid var(--border);}
+.resume-right{padding:2.5rem 4rem 4rem;}
+.resume-block{margin-bottom:2.5rem;}
+.resume-block h3{font-size:0.62rem;text-transform:uppercase;letter-spacing:2.5px;color:var(--rose);margin-bottom:1.2rem;padding-bottom:8px;border-bottom:1px solid var(--border);font-weight:400;}
+.timeline-item{margin-bottom:1.6rem;}
+.timeline-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px;}
+.timeline-role{font-weight:400;font-size:0.88rem;color:var(--ink);}
+.timeline-date{font-size:0.7rem;color:var(--muted);letter-spacing:0.5px;}
+.timeline-co{font-size:0.75rem;color:var(--rose);margin-bottom:5px;letter-spacing:0.02em;}
+.timeline-desc{font-size:0.86rem;color:var(--ink2);line-height:1.7;font-weight:400;}
+.skill-bar-row{margin-bottom:14px;}
+.skill-bar-label{display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:6px;color:var(--ink2);}
+.skill-bar-track{height:1px;background:var(--border);position:relative;}
+.skill-bar-fill{height:1px;background:var(--rose);position:absolute;top:0;left:0;}
+.resume-download{padding:0 4rem 2rem;margin-top:-1rem;}
+.stat-card{padding:1.2rem 1.4rem;border:1px solid var(--border);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.stat-label{font-size:0.75rem;color:var(--muted);font-weight:400;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--ink);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;}
+.contact-left{padding:3rem 4rem 4rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:1.2rem;}
+.contact-big{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;line-height:1.3;color:var(--ink);}
+.contact-left p{font-size:0.85rem;line-height:1.8;color:var(--ink2);font-weight:400;}
+.contact-links{display:flex;flex-direction:column;gap:8px;margin-top:0.5rem;}
+.contact-link{
+  display:flex;align-items:center;gap:12px;
+  font-size:0.78rem;color:var(--ink2);text-decoration:none;font-weight:300;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  transition:color 0.2s;letter-spacing:0.02em;
+}
+.contact-link:hover{color:var(--rose);}
+.contact-arrow{font-size:0.7rem;margin-left:auto;color:var(--muted);}
+.contact-form{padding:3rem 4rem 4rem;display:flex;flex-direction:column;gap:1.2rem;}
+.form-row{display:flex;flex-direction:column;gap:6px;}
+.form-row label{font-size:0.62rem;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.form-row input,.form-row textarea{
+  font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:300;
+  padding:10px 0;
+  border:none;border-bottom:1px solid var(--border);
+  background:transparent;outline:none;resize:none;
+  transition:border-color 0.2s;color:var(--ink);
+}
+.form-row input:focus,.form-row textarea:focus{border-color:var(--rose);}
+.form-row input::placeholder,.form-row textarea::placeholder{color:var(--muted);}
+
+/* FOOTER */
+footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 4rem;font-size:0.7rem;color:var(--muted);
+  letter-spacing:1px;text-transform:uppercase;
+}
+
+/* FADE IN */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-left>*{animation:fadeUp 0.7s ease both;}
+.hero-left>*:nth-child(1){animation-delay:0.05s;}
+.hero-left>*:nth-child(2){animation-delay:0.2s;}
+.hero-left>*:nth-child(3){animation-delay:0.35s;}
+.hero-left>*:nth-child(4){animation-delay:0.5s;}
+
+/* Scroll fade-in animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced project card hover */
+.proj-card {
+  position: relative;
+}
+.proj-card::after {
+  content: "→";
+  position: absolute;
+  top: 1.6rem;
+  right: 1.8rem;
+  font-size: 1.2rem;
+  color: var(--rose);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-family: 'Jost', sans-serif;
+}
+.proj-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--rose-pale);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Cici Li</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Marketing & Creative Strategy · NYC</div>
+    <h1 class="hero-name">
+      Brand.<br/>
+      <em>Story.</em><br/>
+      Strategy.
+    </h1>
+    <p class="hero-bio">
+      I'm Cici — a recent NYU graduate in Media, Culture &amp; Communication. I work across visual storytelling, content strategy, and brand-focused creative projects, obsessed with how aesthetics and intention make a brand feel real.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="ig-profile">
+      <div class="ig-avatar">CL</div>
+      <div class="ig-stats">
+        <div class="ig-handle">Cici Li</div>
+        <div class="ig-nums">
+          <span><strong>6</strong> projects</span>
+          <span><strong>NYU</strong> '26</span>
+        </div>
+        <div class="ig-bio">Marketing · Visual Storytelling · NYC</div>
+      </div>
+    </div>
+    <div class="ig-grid">
+      <div class="ig-cell" style="background:#F0EBE3;"><span>Coffee Lab</span></div>
+      <div class="ig-cell" style="background:#EDE0D8;"><span>Editorial Magazine</span></div>
+      <div class="ig-cell" style="background:#E8E0D5;"><span>Wes Anderson Visual</span></div>
+      <div class="ig-cell" style="background:#F5EDE8;"><span>PinkPantheress × Polaroid</span></div>
+      <div class="ig-cell" style="background:#EAE4DC;"><span>3D Motion</span></div>
+      <div class="ig-cell" style="background:#F2EBE5;"><span>Baymax Brand</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">About</div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a recent NYU graduate in <strong>Media, Culture, and Communication</strong>, with a minor in Business of Entertainment, Media, and Technology — Dean's List, GPA 3.83.</p>
+      <p>Based in New York City, I work at the intersection of brand strategy, content, and visual storytelling. I care deeply about how aesthetics, tone, and pacing shape the way a brand feels — and I bring that sensibility to everything I make.</p>
+      <p>I've led visual marketing at NYU.LIVE across Instagram and RedNote, interned at <strong>Ogilvy</strong> on Unilever and L'Oréal campaigns, and supported fashion PR at <strong>Ruder Finn</strong> for Ralph Lauren and Lane Crawford.</p>
+    </div>
+    <div class="skills-box">
+      <div>
+        <h3>Core Skills</h3>
+        <div class="tag-list">
+          <span class="tag accent">Brand Strategy</span>
+          <span class="tag accent">Content Creation</span>
+          <span class="tag accent">Visual Storytelling</span>
+          <span class="tag">Social Media Strategy</span>
+          <span class="tag">PR & Influencer Mktg</span>
+          <span class="tag">Campaign Research</span>
+          <span class="tag">Copywriting</span>
+          <span class="tag">Project Coordination</span>
+        </div>
+      </div>
+      <div>
+        <h3>Tools</h3>
+        <div class="tag-list">
+          <span class="tag">Adobe InDesign</span>
+          <span class="tag">Photoshop</span>
+          <span class="tag">Premiere Pro</span>
+          <span class="tag">Illustrator</span>
+          <span class="tag">Canva</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Google Suite</span>
+        </div>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <div class="tag-list">
+          <span class="tag">English</span>
+          <span class="tag">Mandarin</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">Selected Work</div>
+  </div>
+  <div class="projects-grid">
+
+    <a href="https://www.instagram.com/think_coffeelab/?hl=en" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#F0EBE3;">Social Media</div>
+      <div class="proj-body">
+        <div class="proj-type">Social Media · Visual Branding</div>
+        <div class="proj-name">Coffee Lab — Social Content</div>
+        <div class="proj-desc">Aesthetic-driven Instagram content for think_coffeelab, centered on slow lifestyle and visual storytelling. AI-assisted visuals and Reels to build a cohesive brand identity.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Instagram</span>
+          <span class="proj-tag">Short-form Video</span>
+          <span class="proj-tag">AI Visuals</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1UypLoHBweiKwVaTF5QBfmDc2scrGbfV1/view?usp=sharing" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#EDE0D8;">Editorial</div>
+      <div class="proj-body">
+        <div class="proj-type">Graphic Design · Editorial</div>
+        <div class="proj-name">Music: Beats Beyond Borders</div>
+        <div class="proj-desc">An editorial magazine exploring Chinese hip-hop and youth culture through visual storytelling. Designed layout, typography, and imagery for a cohesive narrative experience.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Editorial Design</span>
+          <span class="proj-tag">Typography</span>
+          <span class="proj-tag">InDesign</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1XKBpgvkZO__lb7Qc9XWc3j9GdN2Rtd9S/view?usp=sharing" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#E8E0D5;">Visual</div>
+      <div class="proj-body">
+        <div class="proj-type">Graphic Design · Creative Direction</div>
+        <div class="proj-name">Cocktail & Tarot — Wes Anderson</div>
+        <div class="proj-desc">Visual storytelling project translating Wes Anderson's cinematic moods into cocktail recipes and tarot card illustrations through color, composition, and symbolism.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Photoshop</span>
+          <span class="proj-tag">Illustrator</span>
+          <span class="proj-tag">Procreate</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1X8awENsE2O9fAZs27K_sP1P6BSq84Dvz/view?usp=sharing" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#F5EDE8;">Campaign</div>
+      <div class="proj-body">
+        <div class="proj-type">Campaign Concept · Social Strategy</div>
+        <div class="proj-name">PinkPantheress × Polaroid</div>
+        <div class="proj-desc">Conceptual brand-artist campaign developed for a university course. Analyzed strategic alignment across Gen Z positioning, digital activation, experiential rollout, and deal terms.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Brand Strategy</span>
+          <span class="proj-tag">Campaign Concept</span>
+          <span class="proj-tag">TikTok / IG</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1n-YxVb7kdVXx9B3y1rm642XNurFvxznL/view?usp=sharing" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#EAE4DC;">Motion</div>
+      <div class="proj-body">
+        <div class="proj-type">Motion Design</div>
+        <div class="proj-name">3D Motion Branding Study</div>
+        <div class="proj-desc">Short-form motion design project exploring soft 3D typography and playful visual identity inspired by Gen Z aesthetics. Designed, animated, and developed the full color direction.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">3D Typography</span>
+          <span class="proj-tag">Motion Design</span>
+          <span class="proj-tag">Brand Expression</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1ye2D5u_GKtF_zJ_ddxINwyUboitmSfNZ/view?usp=sharing" target="_blank" class="proj-card">
+      <div class="proj-img" style="background:#F2EBE5;">Brand</div>
+      <div class="proj-body">
+        <div class="proj-type">Brand Guidelines · Creative Direction</div>
+        <div class="proj-name">Baymax Cares — Brand System</div>
+        <div class="proj-desc">Full brand guideline system for a children's wellness event. Developed logo usage, color palette, typography, pattern library, and merchandise applications.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Brand Identity</span>
+          <span class="proj-tag">Style Guide</span>
+          <span class="proj-tag">Merchandise</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">Resume</div>
+  </div>
+  <div class="resume-layout">
+    <div class="resume-left">
+      <div class="resume-block">
+        <h3>Experience</h3>
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <span class="timeline-role">Visual Marketing Lead</span>
+            <span class="timeline-date">Mar 2023 – May 2026</span>
+          </div>
+          <div class="timeline-co">NYU.LIVE · New York, NY</div>
+          <div class="timeline-desc">Led visual marketing and social content planning across Instagram and RedNote. Tested short-form formats and managed weekly content calendars coordinating visuals, copy, and event messaging.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <span class="timeline-role">Fashion PR Intern</span>
+            <span class="timeline-date">May – Sep 2024</span>
+          </div>
+          <div class="timeline-co">Ruder Finn</div>
+          <div class="timeline-desc">Supported integrated PR and communications for Ralph Lauren and Lane Crawford. Prepared 150+ celebrity full-look breakdowns, assisted with 50+ influencer outreach emails, and developed monthly PR performance reports.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-top">
+            <span class="timeline-role">Intern</span>
+            <span class="timeline-date">May – Sep 2023</span>
+          </div>
+          <div class="timeline-co">Ogilvy</div>
+          <div class="timeline-desc">Conducted audience analysis for Unilever beauty brands and competitive campaign analysis for L'Oréal skincare. Contributed to an IP-based campaign concept that was later launched nationally as a themed collaboration.</div>
+        </div>
+        <div class="resume-block">
+        <h3>Education</h3>
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <span class="timeline-role">B.S. Media, Culture & Communication</span>
+            <span class="timeline-date">2022 – 2026</span>
+          </div>
+          <div class="timeline-co">New York University</div>
+          <div class="timeline-desc">Minor: Business of Entertainment, Media & Technology · GPA 3.83 · Dean's List</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-right">
+      <div class="resume-block">
+        <h3>Skills</h3>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Brand Strategy & Visual Identity</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Content & Copywriting</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Social Media Strategy</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>PR & Influencer Marketing</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Adobe Creative Suite</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div>
+        </div>
+      </div>
+      <div class="resume-block">
+        <h3>By the Numbers</h3>
+        <div class="stat-card">
+          <div class="stat-label">Celebrity lookbooks prepared</div>
+          <div class="stat-num">150+</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Influencer outreach emails</div>
+          <div class="stat-num">50+</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Platforms managed at NYU.LIVE</div>
+          <div class="stat-num">3</div>
+        </div>
+      </div>
+      <div class="resume-block">
+        <h3>Coursework</h3>
+        <div class="tag-list">
+          <span class="tag">Social Media & Digital Analytics</span>
+          <span class="tag">Public Relations</span>
+          <span class="tag">Digital Business Strategies</span>
+          <span class="tag">Social Media Strategy</span>
+          <span class="tag">Entertainment & Media Industries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="resume-download">
+    <a href="https://drive.google.com/file/d/1tRAxIZ2gWrzdQuKhSe2q2nIo-ZmG7w8A/view?usp=sharing" target="_blank" class="btn-primary">Download to see full resume</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">Let's Connect</div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p class="contact-big">Open to full-time roles, collaborations & creative projects.</p>
+      <p>I'm especially drawn to brand strategy, content, and campaign work. If you're building something thoughtful, I'd love to be part of it.</p>
+      <div class="contact-links">
+        <a href="mailto:ml8106@nyu.edu" class="contact-link">
+          ml8106@nyu.edu
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="tel:3322593258" class="contact-link">
+          (332) 259-3258
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/cici-li-4026123b1/" target="_blank" class="contact-link">
+          LinkedIn — Cici Li
+          <span class="contact-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" placeholder="Your name"/>
+      </div>
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com"/>
+      </div>
+      <div class="form-row">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:fit-content;margin-top:0.5rem;" onclick="alert('Connect to Formspree or EmailJS to make this live!')">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Cici Li</span>
+  <span>NYU · Media, Culture & Communication · New York</span>
+</footer>
+
+
+<script>
+// Intersection Observer for scroll fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+  section.classList.add('fade-in-section');
+  observer.observe(section);
+});
+</script>
+</body>
+</html>
